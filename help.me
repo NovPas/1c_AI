@@ -1,5 +1,32 @@
 Вернуть права на файлы 1С
+	# Добавляем твоего пользователя в группу www-data
+	sudo usermod -aG www-data novpas
+	
 	sudo chown -R novpas:novpas /opt/1c-data/retailDemo
 	sudo chmod -R 755 /opt/1c-data/retailDemo
 	sudo chown -R www-data:www-data /opt/1c-data/retailDemo
 	sudo chmod -R 775 /opt/1c-data/retailDemo
+	
+Запуск сервиса вручную
+	sudo systemctl disable ollama
+
+	# Запустить
+	sudo systemctl start ollama
+
+	# Остановить
+	sudo systemctl stop ollama
+
+	# Проверить статус
+	systemctl status ollama
+	
+	Или ещё проще — алиасы в bashrc
+	bashecho 'alias ai-start="sudo systemctl start ollama"' >> ~/.bashrc
+	echo 'alias ai-stop="sudo systemctl stop ollama"' >> ~/.bashrc
+	source ~/.bashrc
+	Теперь в терминале просто:
+	bashai-start   # включить
+	ai-stop    # выключить
+	
+	
+Переход в папку с Данными 1С Розница
+	cd /opt/1cv8/x86_64/8.3.26.1656
