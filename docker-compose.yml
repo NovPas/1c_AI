@@ -10,8 +10,10 @@ services:
       - N8N_BASIC_AUTH_ACTIVE=true
       - N8N_BASIC_AUTH_USER=${N8N_BASIC_AUTH_USER}
       - N8N_BASIC_AUTH_PASSWORD=${N8N_BASIC_AUTH_PASSWORD}
+      - NODE_FUNCTION_ALLOW_BUILTIN=crypto
     volumes:
       - ./n8n_data:/home/node/.n8n
+      - ./n8n_shared:/home/node/.n8n-files
     extra_hosts:
       - "host.docker.internal:host-gateway"
 
