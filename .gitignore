@@ -218,3 +218,14 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+
+# n8n runtime data — база workflow, история выполнений, credentials
+n8n_data/
+
+# Qdrant runtime data — сегменты, индексы, WAL
+qdrant_data/
+
+# выгрузки метаданных конфигурации 1С (генерируются заново, не нужны в git)
+*.json
+ConfigurationJSON.txt
