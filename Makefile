@@ -5,6 +5,3 @@
 export-workflows:
 	docker compose exec n8n mkdir -p /home/node/.n8n-files/workflows
 	docker compose exec n8n n8n export:workflow --all --separate --output=/home/node/.n8n-files/workflows/
-	mkdir -p workflows
-	cp n8n_shared/workflows/*.json workflows/
-	@echo "Готово: workflows/*.json — закоммитьте их в git."
